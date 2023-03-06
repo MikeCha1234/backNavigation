@@ -64,7 +64,6 @@ class APIOpenAirUtils {
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     handleError(null, delegate, t.message)
                 }
-
                 override fun onResponse(
                     call: Call<LoginResponse>,
                     response: Response<LoginResponse>

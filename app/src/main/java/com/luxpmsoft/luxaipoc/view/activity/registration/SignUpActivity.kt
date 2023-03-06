@@ -2,6 +2,7 @@ package com.luxpmsoft.luxaipoc.view.activity.registration
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -28,6 +29,8 @@ import kotlinx.android.synthetic.main.activity_sign_in1.*
 
 class SignUpActivity : AppCompatActivity() {
 
+    val TAG = "TAG"
+
     private lateinit var binding: ActivitySignUpBinding
 
     private var isFirstNameEmpty = true
@@ -43,6 +46,7 @@ class SignUpActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         MyUtils.setStatusBarTransparentFlagBlack(this)
+        Log.d(TAG, "onCreate: onCreate() is called here.. ")
 
         loginGoogle = SignInGoogle(this)
         loginFacebook = FacebookLogin(this)
@@ -58,6 +62,9 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun setListeners() {
+
+        Log.d(TAG, "setListeners: seLitsetner() is called here.. ")
+
         binding.buttonContinue.setOnClickListener {
             val intent = Intent(this@SignUpActivity, RegistrationChoosePasswordActivity::class.java)
             intent.putExtra(FIRST_NAME, binding.editTextFirstName.text.toString())

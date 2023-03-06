@@ -40,6 +40,8 @@ class RegistrationChoosePasswordActivity : AppCompatActivity() {
                 text.toString().trim()
             )
         }
+
+        // continue button..
         binding.buttonContinue.setOnClickListener {
             MyUtils.showProgress(this@RegistrationChoosePasswordActivity, binding.flProgress)
             val register = RegisterRequest()
@@ -48,6 +50,7 @@ class RegistrationChoosePasswordActivity : AppCompatActivity() {
             register.email = email
             register.phone = generateRandomNumber()
             register.password = binding.editTextPassword.text.toString()
+
             APIOpenAirUtils.register(register, object : APIInterface.onDelegate {
                 override fun onSuccess(result: Any?) {
                     MyUtils.hideProgress(

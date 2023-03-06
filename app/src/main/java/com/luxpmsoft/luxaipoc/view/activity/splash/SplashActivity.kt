@@ -86,6 +86,7 @@ class SplashActivity : AppCompatActivity() {
                 finish()
             } else {
                 if (BACK_BUTTON_CLICKED == "yes") {
+                    BACK_BUTTON_CLICKED = "no"
                     finishAffinity()
 
                 } else {
